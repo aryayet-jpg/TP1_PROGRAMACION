@@ -41,3 +41,4 @@ if servidor == "Web" and usuarios > 40:
 if servidor == "BaseDatos" and disco < 20 and ram > 70:
         print("Su base de datos esta en riesgo, ")
 #aca tampoco jeje
+# Esta es una prueba!!!
