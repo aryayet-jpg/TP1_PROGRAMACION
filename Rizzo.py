@@ -81,7 +81,7 @@ if contador == 0:
 
 #Rizzo:Recomendaciones para optimizar
 
-print("\nRecomendaciones:")
+print("Recomendaciones:")
 
 if cpu_ram_error:
     print("- Reducir carga del sistema o mejorar hardware (CPU/RAM).")
@@ -100,4 +100,4 @@ if bdd_disco_ram_error:
 
 if contador == 0:
     print("- No se requieren acciones. El sistema funciona correctamente.")
-print(f"\n===============================================") 
+print(f"===============================================") 
