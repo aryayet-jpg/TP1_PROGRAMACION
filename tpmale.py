@@ -1,1 +1,1 @@
-print("Archivo de Malena")
+print("==== SISTEMA DE DIAGNOSTICO DEL SERVIDOR ===" )
