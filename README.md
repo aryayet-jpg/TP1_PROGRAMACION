@@ -52,17 +52,3 @@ El análisis se realiza mediante reglas lógicas aplicadas sobre datos solicitad
 6. Se muestran los resultados y recomendaciones.
 
 
-### Ejemplo de ejecución
-
-CPU: 90
-RAM: 90
-Disco: 10
-Procesos: 100
-Firewall: Inactivo
-
-Resultado:
-- Sobrecarga crítica
-- Riesgo de seguridad
-- Mantenimiento urgente
-
-Riesgo: 75%
