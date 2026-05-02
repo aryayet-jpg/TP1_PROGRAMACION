@@ -1,11 +1,12 @@
 print("==== SISTEMA DE DIAGNOSTICO DEL SERVIDOR ===" )
 
-#(Frann): Separo un poco para que sea mejor lejible!
-# Entradas numericas
-# 
+#Daniel: Agregué e Importé la función mostrar_datos del módulo datos_de_entrada
 
-from.datos_de_entrada import mostrar_datos
-# from TP1_PROGRAMACION.daniel import.mostrar_datos:
+from datos_de_entrada import mostrar_datos  
+
+# Daniel: Recibe las variables definidas en la función
+(cpu, ram, admin, discos, procesos, disco, firewall, servidor, usuarios, nombre_del_servidor, so) = mostrar_datos()
+
 carga_promedio = (cpu + ram) / 2 # (Frann): Acá agregué parentesis!
 recursos_disponibles = print( f"\nEl promedio de uso de recursos (CPU/RAM) es: {carga_promedio}%:  ")
 
@@ -85,7 +86,7 @@ if contador == 0:
 
 print("Recomendaciones:")
 
-if cpu_ram_error: #Daniel:posicioné los print para que no estén el la misma
+if cpu_ram_error: #Daniel:posicioné los print para que no estén el la misma linea
     print("- Reducir carga del sistema o mejorar hardware (CPU/RAM).")
 
 if disco_procesos_error:
