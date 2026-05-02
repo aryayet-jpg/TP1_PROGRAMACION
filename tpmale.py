@@ -50,7 +50,7 @@ if not firewall == "Activo":
 if (cpu >= 40 and cpu <= 70) and (ram >= 40 and ram <= 70): # (Frann): Corregí una logica acá
         print("El estado de su servidor es normal. ")
 
-if servidor == "Web" and usuarios > 100 and cpu > 85: # (Male): corrijo cpu, 25 es bajo
+if servidor == "Web" and usuarios > 100 and cpu > 85: # (Male): corregi cpu, 25 es bajo
         web_usuarios_cpu_error = "🚨 Su servidor web tiene alta demanda, se recomienda escalar recursos."
         contador += 1
 
