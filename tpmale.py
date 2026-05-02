@@ -1,23 +1,14 @@
 print("==== SISTEMA DE DIAGNOSTICO DEL SERVIDOR ===" )
 
-#(Frann): Separo un poco para que sea mejor lejible!
-# Entradas numericas
-cpu = float(input("Ingrese el uso del CPU (%): "))
-ram = float(input("Ingrese el uso de memoria RAM (%): "))
-disco = float(input("Ingrese el espacio libre en disco (GB): "))
-usuarios = int(input("Ingrese la cantidad de usuarios conectados: "))
-procesos = int(input("Ingrese la cantidad de procesos activos: "))
+#Daniel: Agregué e Importé la función mostrar_datos del módulo datos_de_entrada
 
-# Entradas de categoria
-so = input("Ingrese su sistema operativo (Linux/Windows): ") 
-firewall = input("Ingrese su estado del firewall (Activo / Inactivo): ")
-servidor = input("Ingrese su tipo de servidor (Web / Base de datos / Archivos): ")
-nombre_del_servidor = input("Ingrese el nombre del servidor: ")
-admin = input("Ingrese el nombre del administrador responsable: ")
+from datos_de_entrada import mostrar_datos  
+
+# Daniel: Recibe las variables definidas en la función
+(cpu, ram, admin, discos, procesos, disco, firewall, servidor, usuarios, nombre_del_servidor, so) = mostrar_datos()
 
 carga_promedio = (cpu + ram) / 2 # (Frann): Acá agregué parentesis!
-print( f"\nEl promedio de uso de recursos (CPU/RAM) es: {carga_promedio}%:  ") 
-# (Male): le saqué la variable del principio a la linea 19, no era necesario
+recursos_disponibles = print( f"\nEl promedio de uso de recursos (CPU/RAM) es: {carga_promedio}%:  ")
 
 # Errores en caso de no coincidir
 cpu_ram_error = ""
@@ -50,27 +41,68 @@ if not firewall == "Activo":
 if (cpu >= 40 and cpu <= 70) and (ram >= 40 and ram <= 70): # (Frann): Corregí una logica acá
         print("El estado de su servidor es normal. ")
 
-if servidor == "Web" and usuarios > 100 and cpu > 85: # (Male): corregi cpu, 25 es bajo
-        web_usuarios_cpu_error = "🚨 Su servidor web tiene alta demanda, se recomienda escalar recursos."
-        contador += 1
+match servidor: # Daniel: agregué un match para el input servidor.       
+    case 1:
+        if servidor == 1 and usuarios > 100 and cpu > 85: # (Male): corrijo cpu, 25 es bajo
+                web_usuarios_cpu_error = "🚨 Su servidor web tiene alta demanda, se recomienda escalar recursos."
+                contador += 1
+    case 2:
+        if servidor == 2 and disco < 20 and ram > 70:
+                bdd_disco_ram_error= "🚨 Su base de datos esta en riesgo (Poco disco y mucha RAM)."
+                contador += 1
+    case 3:
+          print("") #Daniel: no hay validaciones para esta opción            
+    case _:
+          print("NO es uno de los servidores opcionales")
 
-if servidor == "Base de datos" and disco < 20 and ram > 70:
-        bdd_disco_ram_error= "🚨 Su base de datos esta en riesgo (Poco disco y mucha RAM)."
-        contador += 1
+#(Male): Acomodo la cuenta del contador para que sea mas clara
+total_reglas = 4  # porque match hace exclusión
+estado_general = (contador / total_reglas) * 100
 
-
-estado_general = (contador / 4) * 100
 print(f"\n===============================================")
 print(f"\nDiagnostico del servidor: {nombre_del_servidor}")
 print(f"\nEl porcentaje del riesgo es: {estado_general}%")
 print(f"Su sistema operativo es: {so}")
 print(f"\n===============================================\n")
 print(f"Problemas detectados:")
-if cpu_ram_error: print(cpu_ram_error)
-if disco_procesos_error: print(disco_procesos_error)
-if antivirus: print(antivirus)
-if web_usuarios_cpu_error: print(web_usuarios_cpu_error)
-if bdd_disco_ram_error: print(bdd_disco_ram_error)
+
+if cpu_ram_error: 
+    print(cpu_ram_error)
+
+if disco_procesos_error: 
+    print(disco_procesos_error)
+
+if antivirus: 
+    print(antivirus)
+
+if web_usuarios_cpu_error: 
+    print(web_usuarios_cpu_error)
+
+if bdd_disco_ram_error: 
+    print(bdd_disco_ram_error)
+
 if contador == 0:
       print("No se detectaron problemas! Su servicio es estable. ")
-print(f"\n===============================================") 
+
+#Rizzo:Recomendaciones para optimizar
+
+print("Recomendaciones:")
+
+if cpu_ram_error: #Daniel:posicioné los print para que no estén el la misma linea
+    print("- Reducir carga del sistema o mejorar hardware (CPU/RAM).")
+
+if disco_procesos_error:
+    print("- Liberar espacio en disco o revisar procesos innecesarios.")
+
+if antivirus:
+    print("- Activar el firewall para mejorar la seguridad.")
+
+if web_usuarios_cpu_error:
+    print("- Escalar recursos del servidor web o balancear carga.")
+
+if bdd_disco_ram_error:
+    print("- Ampliar almacenamiento o optimizar uso de memoria en la base de datos.")
+
+if contador == 0:
+    print("- No se requieren acciones. El sistema funciona correctamente.")
+print(f"===============================================") 
