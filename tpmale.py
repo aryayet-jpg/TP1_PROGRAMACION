@@ -43,7 +43,7 @@ if (cpu >= 40 and cpu <= 70) and (ram >= 40 and ram <= 70): # (Frann): Corregí 
 
 match servidor: # Daniel: agregué un match para el input servidor.       
     case 1:
-        if servidor == 1 and usuarios > 100 and cpu > 85: # (Male): corrijo cpu, 25 es bajo
+        if servidor == 1 and usuarios > 100 and cpu > 85: # (Male): corrijo cpu, 25 es bajo-
                 web_usuarios_cpu_error = "🚨 Su servidor web tiene alta demanda, se recomienda escalar recursos."
                 contador += 1
     case 2:
