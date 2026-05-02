@@ -7,9 +7,10 @@ def mostrar_datos() -> str | int | float:
          (str | int | float): Valores numéricos y cadenas de caracteres ingresados por el usuario.
     
     return:
-         (str | int | float): Valores numéricos y cadenas de caracteres "que fueron" ingresados por el usuario.
+         (str | int | float): variables numéricas y cadenas de caracteres "que fueron" ingresados por el usuario.
     """
-  
+    #(Frann): Separo un poco para que sea mejor lejible!
+    # Entradas numericas
     cpu = float(input("Ingrese el uso del CPU (%): "))
     ram = float(input("Ingrese el uso de memoria RAM (%): "))
     disco = float(input("Ingrese el espacio libre es disco (GB): "))
@@ -22,7 +23,6 @@ def mostrar_datos() -> str | int | float:
     so = input("Ingrese su sistema operativo (Linux/Windows): ") 
     while so != "Linux" and so != "Windows":
         so = input("* CAMPO OBLIGATORIO Ingrese su sistema operativo (Linux/Windows): ") 
-
 
     # Daniel: Agregue un while para que valide sólo las opciones ofrecidas por el input 
     firewall = input("Ingrese su estado del firewall (Activo / Inactivo): ")
@@ -43,6 +43,6 @@ def mostrar_datos() -> str | int | float:
     nombre_del_servidor = input("Ingrese el nombre del servidor: ")
     admin = input("Ingrese el nombre del administrador responsable: ")
 
-    return 
+    return(cpu, ram, admin, disco, procesos, disco, firewall, servidor, usuarios, nombre_del_servidor, so) 
 
-mostrar_datos()
+# mostrar_datos()
