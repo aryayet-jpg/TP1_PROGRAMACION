@@ -84,25 +84,24 @@ if bdd_disco_ram_error:
 if contador == 0:
       print("No se detectaron problemas! Su servicio es estable. ")
 
-#Rizzo:Recomendaciones para optimizar
 
-print("Recomendaciones:")
+else:
+     
+    print("Recomendaciones:")
 
-if cpu_ram_error: #Daniel:posicioné los print para que no estén el la misma linea
-    print("- Reducir carga del sistema o mejorar hardware (CPU/RAM).")
+    if cpu_ram_error: #Daniel:posicioné los print para que no estén el la misma linea
+        print("- Reducir carga del sistema o mejorar hardware (CPU/RAM).")
 
-if disco_procesos_error:
-    print("- Liberar espacio en disco o revisar procesos innecesarios.")
+    if disco_procesos_error:
+        print("- Liberar espacio en disco o revisar procesos innecesarios.")
 
-if antivirus:
-    print("- Activar el firewall para mejorar la seguridad.")
+    if antivirus:
+        print("- Activar el firewall para mejorar la seguridad.")
 
-if web_usuarios_cpu_error:
-    print("- Escalar recursos del servidor web o balancear carga.")
+    if web_usuarios_cpu_error:
+        print("- Escalar recursos del servidor web o balancear carga.")
 
-if bdd_disco_ram_error:
-    print("- Ampliar almacenamiento o optimizar uso de memoria en la base de datos.")
+    if bdd_disco_ram_error:
+        print("- Ampliar almacenamiento o optimizar uso de memoria en la base de datos.")
 
-if contador == 0:
-    print("- No se requieren acciones. El sistema funciona correctamente.")
-print(f"===============================================") 
+    print(f"===============================================") 
