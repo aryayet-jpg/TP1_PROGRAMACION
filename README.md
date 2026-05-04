@@ -10,7 +10,7 @@
 ### Lenguaje utilizado
 - Python
 
-## Descripcion del codigo
+## Descripción del codigo
 
 El sistema desarrollado es una aplicación que permite analizar el estado de un servidor a partir de datos solicitados al usuario.
 
