@@ -19,7 +19,7 @@ El sistema desarrollado es una aplicación que permite analizar el estado de un 
 - Evaluar el rendimiento del servidor
 - Detectar posibles riesgos o fallos
 - Generar alertas automáticas
-- Brindar recomendaciones de administración
+- Brindar recomendaciones de administración (Si se necesita)
 
 ### Consignas solicitadas para las reglas
 
@@ -47,7 +47,7 @@ El sistema desarrollado es una aplicación que permite analizar el estado de un 
 3. Se evalúan reglas condicionales.
 4. Se acumulan alertas en base a las condiciones cumplidas.
 5. Se calcula un porcentaje de riesgo.
-6. Se muestran los resultados y recomendaciones.
+6. Se muestran los resultados y recomendaciones (En caso que se necesite).
 
 
 ## **Ejemplo de ejecución**
