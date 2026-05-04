@@ -55,7 +55,7 @@ match servidor: # Daniel: agregué un match para el input servidor.
     case _:
           print("NO es uno de los servidores opcionales")
 
-#(Male): Acomodo la cuenta del contador para que sea mas clara
+#(Male): Acomodo la cuenta del contador para que se vea mas clara
 total_reglas = 4  # porque match hace exclusión
 estado_general = (contador / total_reglas) * 100
 
