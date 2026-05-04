@@ -72,14 +72,16 @@ Su sistema operativo es: Linux
 
 ===============================================
 
-Problemas detectados:
-🚨 Sobrecarga critica (CPU y RAM muy altas!) 
-🚨 Sobrecarga critica (Disco o Procesos altos!) 
-🚨 Riesgo de seguridad: firewall desactivado. 
-🚨 Su servidor web tiene alta demanda, se recomienda escalar recursos.
+Problemas detectados:  
+🚨 Sobrecarga critica (CPU y RAM muy altas!)  
+🚨 Sobrecarga critica (Disco o Procesos altos!)   
+🚨 Riesgo de seguridad: firewall desactivado.   
+🚨 Su servidor web tiene alta demanda, se recomienda escalar recursos.  
+
+
 Recomendaciones:
-- Reducir carga del sistema o mejorar hardware (CPU/RAM).
-- Liberar espacio en disco o revisar procesos innecesarios.
-- Activar el firewall para mejorar la seguridad.
-- Escalar recursos del servidor web o balancear carga.
+- Reducir carga del sistema o mejorar hardware (CPU/RAM).  
+- Liberar espacio en disco o revisar procesos innecesarios.  
+- Activar el firewall para mejorar la seguridad.  
+- Escalar recursos del servidor web o balancear carga.  
 
