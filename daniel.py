@@ -18,7 +18,7 @@ web_usuarios_cpu_error = ""
 bdd_disco_ram_error = ""
 
 
-input(f"Hola {admin}. Presione ENTER para ver su diagnostico: \n")
+input(f"\nHola {admin}. Presione ENTER para ver su diagnostico: \n")
 
 contador = 0
 
@@ -84,7 +84,7 @@ if contador == 0:
 
 #Rizzo:Recomendaciones para optimizar
 
-print("Recomendaciones:")
+print("\nRecomendaciones:")
 
 if cpu_ram_error: #Daniel:posicioné los print para que no estén el la misma linea
     print("- Reducir carga del sistema o mejorar hardware (CPU/RAM).")
