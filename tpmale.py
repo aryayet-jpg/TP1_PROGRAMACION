@@ -106,3 +106,4 @@ if bdd_disco_ram_error:
 if contador == 0:
     print("- No se requieren acciones. El sistema funciona correctamente.")
 print(f"===============================================") 
+#respaldo - 
