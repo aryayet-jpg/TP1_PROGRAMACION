@@ -5,7 +5,6 @@ from inputs import (
 )
 from calculos import calcular_carga_promedio
 from reglas import regla_disco_procesos_error, regla_cpu_ram_error, regla_firewall_error, regla_estado_optimo, regla_servidor_web, regla_base_datos_disco_ram
-from validaciones import validar_float, validar_int, validar_texto, validar_opcion, validar_servidor
 
 
 print("==== SISTEMA DE DIAGNÓSTICO DEL SERVIDOR ===")
