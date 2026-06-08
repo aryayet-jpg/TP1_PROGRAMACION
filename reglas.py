@@ -65,3 +65,5 @@ def evaluar_sistema(nombre_del_servidor, so, cpu, ram, disco, procesos, firewall
         bdd_disco_ram_error, 
         contador
     )
+
+    #******************** HOLA SOY MALE, ESTOY HACIENDO ESTO!!**********************
