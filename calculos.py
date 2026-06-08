@@ -1,4 +1,4 @@
-def calcular_carga_promedio(cpu : float, ram : float) -> float:
+def calcular_carga_promedio(cpu: float, ram: float) -> float:
     """Calcula el promedio de uso de recursos (CPU/RAM)
 
     Args:
@@ -10,7 +10,7 @@ def calcular_carga_promedio(cpu : float, ram : float) -> float:
     """
     return (cpu + ram) / 2
 
-def calcular_porcentaje_riesgo(contador_alertas : int, total_reglas : int) -> float:
+def calcular_porcentaje_riesgo(contador_alertas: int, total_reglas: int) -> float:
     """Calcula el porcentaje de riesgo de las alertas
 
     Args:
