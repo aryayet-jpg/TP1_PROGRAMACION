@@ -1,69 +1,52 @@
-from calculos import calcular_porcentaje_riesgo
-from outputs import mostrar_reporte
+# 1. Validación CPU y RAM
 
-def evaluar_sistema(nombre_del_servidor, so, cpu, ram, disco, procesos, firewall, servidor, usuarios):
-    # Errores en caso de no coincidir
-    cpu_ram_error = ""
-    disco_procesos_error = ""
-    antivirus = ""
-    web_usuarios_cpu_error = ""
-    bdd_disco_ram_error = ""
-    
-    contador = 0
-
-    # 1. Validación CPU y RAM
+def regla_cpu_ram_error (cpu: float, ram: float) -> bool:
     if cpu > 80 and ram > 80:
-        cpu_ram_error = "🚨 Sobrecarga critica (CPU y RAM muy altas!) "
-        contador += 1
+        return True
     else:
-        print("El estado de su CPU/RAM funcionan perfecto!. ")
+        return False 
+    
 
-    # 2. Validación Disco y Procesos
+# 2. Validación Disco y Procesos
+
+def regla_disco_procesos_error(disco: float, procesos: int) -> bool:
+
     if disco < 30 or procesos > 80:
-        disco_procesos_error = "🚨 Sobrecarga critica (Disco o Procesos altos!) "
-        contador += 1
+        return True
     else:
-        print("El estado de su Disco o proceso funcionan perfecto!. ")
+        return False
 
-    # 3. Validación Firewall
-    if not firewall == "Activo":  
-        antivirus = "🚨 Riesgo de seguridad: firewall desactivado. "
-        contador += 1 
 
-    # 4: Alerta de estado óptimo o normal
+# 3. Validación Firewall
+
+def regla_firewall_error(firewall: str) -> bool:
+    if not firewall == "Activo":
+        return True
+    else:
+        return False
+        
+
+# 4: Alerta de estado óptimo o normal
+
+def regla_estado_optimo(cpu: float, ram: float) -> bool:
     if (cpu >= 40 and cpu <= 70) and (ram >= 40 and ram <= 70): 
-        print("El estado de su servidor es normal. ")
+        return True
+    else:
+         return False
 
-    # 5. Validación según tipo de servidor
-    match servidor:       
-        case 1:
-            if servidor == 1 and usuarios > 100 and cpu > 85: 
-                web_usuarios_cpu_error = "🚨 Su servidor web tiene alta demanda, se recomienda escalar recursos."
-                contador += 1
-        case 2:
-            if servidor == 2 and disco < 20 and ram > 70:
-                bdd_disco_ram_error = "🚨 Su base de datos esta en riesgo (Poco disco y mucha RAM)."
-                contador += 1
-        case 3:
-            print("")           
-        case _:
-            print("NO es uno de los servidores opcionales")
 
-    # 6: Calculamos el riesgo real
-    total_reglas = 4  
-    estado_general = calcular_porcentaje_riesgo(contador, total_reglas)
+# 5. Validación alerta servidor web
+def regla_servidor_web(servidor: int, usuarios: int, cpu: float) -> bool:   
+    if servidor == 1 and usuarios > 100 and cpu > 85:
+        return True
+    else:
+        return False    
+    
 
-    # LLAMADA AL OUTPUT:
-    mostrar_reporte(
-        nombre_del_servidor, 
-        estado_general, 
-        so, 
-        cpu_ram_error, 
-        disco_procesos_error, 
-        antivirus, 
-        web_usuarios_cpu_error, 
-        bdd_disco_ram_error, 
-        contador
-    )
-
-    #******************** HOLA SOY MALE, ESTOY HACIENDO ESTO!!**********************
+# 6. Validación alerta base de datos
+    
+def regla_base_datos_disco_ram(servidor: int, disco: float, ram: float) -> bool:
+    if servidor == 2 and disco < 20 and ram > 70:
+        return True
+    else:
+       return False
