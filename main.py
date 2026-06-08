@@ -1,6 +1,7 @@
 from inputs import ingresar_sistema_operativo, ingresar_firewall, ingresar_tipo_servidor
 from calculos import calcular_carga_promedio
 from reglas import evaluar_sistema
+from validaciones import validar_float, validar_int, validar_texto, validar_opcion, validar_servidor
 
 print("==== SISTEMA DE DIAGNÓSTICO DEL SERVIDOR ===")
 
