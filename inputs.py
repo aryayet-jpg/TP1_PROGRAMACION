@@ -1,27 +1,41 @@
-
-from validaciones import validar_float, validar_int, validar_texto, validar_opcion, validar_servidor
+from validaciones import validar_float, validar_int, validar_texto
 
 def pedir_cpu():
-    # Usamos tu función: mensaje, min, max
-    return validar_float("Ingrese el uso del CPU (%): ", 0, 100)
+    return validar_float("Ingrese el uso del CPU (%): ", 0.0, 100.0)
 
 def pedir_ram():
-    return validar_float("Ingrese el uso de memoria RAM (%): ", 0, 100)
+    return validar_float("Ingrese el uso de memoria RAM (%): ", 0.0, 100.0)
 
 def pedir_disco():
-    return validar_float("Ingrese el espacio libre en disco (GB): ", 0, 1000)
+    return validar_float("Ingrese el espacio libre en disco (GB): ", 0.0, 10000.0)
 
 def pedir_usuarios():
-    return validar_int("Ingrese la cantidad de usuarios conectados: ", 0, 500)
+    return validar_int("Ingrese la cantidad de usuarios conectados: ", 0, 5000)
 
 def pedir_procesos():
-    return validar_int("Ingrese la cantidad de procesos activos: ", 0, 1000)
+    return validar_int("Ingrese la cantidad de procesos activos: ", 0, 10000)
 
 def pedir_sistema_operativo():
-    return validar_opcion("Ingrese su sistema operativo (Linux/Windows): ")
+    so = input("Ingrese su sistema operativo (Linux/Windows): ") 
+    while so != "Linux" and so != "Windows":
+        so = input("* CAMPO OBLIGATORIO Ingrese su sistema operativo (Linux/Windows): ") 
+    return so
 
 def pedir_firewall():
-    return validar_texto("Ingrese su estado del firewall (Activo / Inactivo): ")
+    firewall = input("Ingrese su estado del firewall (Activo / Inactivo): ")
+    while firewall != "Activo" and firewall != "Inactivo":
+        firewall = input("* CAMPO OBLIGATORIO Ingrese su estado del firewall (Activo / Inactivo): ")
+    return firewall
+
+def pedir_tipo_servidor():
+    print()
+    print("[1] Web") 
+    print("[2] Base de datos")
+    print("[3] Archivos")
+    servidor = int(input("Ingrese su tipo de servidor: "))
+    while servidor != 1 and servidor != 2 and servidor != 3:
+        servidor = int(input("* CAMPO OBLIGATORIO Ingrese su tipo de servidor: "))
+    return servidor
 
 def pedir_nombre_servidor():
     return validar_texto("Ingrese el nombre del servidor: ")
@@ -29,15 +43,3 @@ def pedir_nombre_servidor():
 def pedir_admin():
     return validar_texto("Ingrese el nombre del administrador responsable: ")
 
-def pedir_tipo_servidor():
-    return validar_servidor("Ingrese su tipo de servidor: ")
-
-#funciones duplicadas, llamamos a las nuevas:
-def ingresar_sistema_operativo():
-    return pedir_sistema_operativo()
-
-def ingresar_firewall():
-    return pedir_firewall()
-
-def ingresar_tipo_servidor():
-    return pedir_tipo_servidor()
