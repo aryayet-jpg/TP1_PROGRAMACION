@@ -1,3 +1,5 @@
+#**************FALTAN LOS DOCSTRINGS, LOS AGREGO MAÑANA****************
+
 # 1. Verificar CPU y RAM
 
 def regla_cpu_ram_error (cpu: float, ram: float) -> bool:
