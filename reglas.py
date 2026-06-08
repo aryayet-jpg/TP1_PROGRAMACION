@@ -36,6 +36,7 @@ def regla_estado_optimo(cpu: float, ram: float) -> bool:
 
 
 # 5. Verificar alerta servidor web
+
 def regla_servidor_web(servidor: int, usuarios: int, cpu: float) -> bool:   
     if servidor == 1 and usuarios > 100 and cpu > 85:
         return True
