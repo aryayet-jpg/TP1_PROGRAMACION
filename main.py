@@ -5,6 +5,8 @@ from inputs import (
 )
 from calculos import calcular_carga_promedio
 from reglas import regla_disco_procesos_error, regla_cpu_ram_error, regla_firewall_error, regla_estado_optimo, regla_servidor_web, regla_base_datos_disco_ram
+from calculos import calcular_porcentaje_riesgo
+from outputs import mostrar_reporte
 
 
 print("==== SISTEMA DE DIAGNÓSTICO DEL SERVIDOR ===")
@@ -72,5 +74,18 @@ if regla_servidor_web(servidor, usuarios, cpu):
 if regla_base_datos_disco_ram(servidor, disco, ram):
     mensaje_base_datos_disco_ram = ("🚨 Su base de datos esta en riesgo (Poco disco y mucha RAM).")
     contador += 1
+# 4. PORCENTAJE DE RIESGO
+porcentaje_riesgo = calcular_porcentaje_riesgo(contador, 4)
 
-    
+# MUESTRA DEL REPORTE
+mostrar_reporte(
+    nombre_del_servidor, 
+    porcentaje_riesgo, 
+    so, 
+    mensaje_cpu_ram, 
+    mensaje_disco_procesos, 
+    mensaje_firewall, 
+    mensaje_servidor_web, 
+    mensaje_base_datos_disco_ram,
+    contador
+)
