@@ -1,5 +1,6 @@
 from validaciones import validar_float, validar_int, validar_texto
 
+
 def pedir_cpu():
     """Solicita y valida el porcentaje de uso de CPU (0-100).
     
@@ -7,6 +8,7 @@ def pedir_cpu():
         float: Porcentaje de uso de CPU válido entre 0 y 100.
     """
     return validar_float("Ingrese el uso del CPU (%): ", 0.0, 100.0)
+
 
 def pedir_ram():
     """Solicita y valida el porcentaje de uso de memoria RAM (0-100).
@@ -16,6 +18,7 @@ def pedir_ram():
     """
     return validar_float("Ingrese el uso de memoria RAM (%): ", 0.0, 100.0)
 
+
 def pedir_disco():
     """Solicita y valida el espacio libre en disco en GB (0-10000).
     
@@ -23,6 +26,7 @@ def pedir_disco():
         float: Espacio libre en disco válido entre 0 y 10000 GB.
     """
     return validar_float("Ingrese el espacio libre en disco (GB): ", 0.0, 10000.0)
+
 
 def pedir_usuarios():
     """Solicita y valida la cantidad de usuarios conectados (0-5000).
@@ -32,6 +36,7 @@ def pedir_usuarios():
     """
     return validar_int("Ingrese la cantidad de usuarios conectados: ", 0, 5000)
 
+
 def pedir_procesos():
     """Solicita y valida la cantidad de procesos activos (0-10000).
     
@@ -39,6 +44,7 @@ def pedir_procesos():
         int: Cantidad de procesos válida entre 0 y 10000.
     """
     return validar_int("Ingrese la cantidad de procesos activos: ", 0, 10000)
+
 
 def pedir_sistema_operativo():
     """Solicita y valida que el sistema operativo sea Linux o Windows.
@@ -51,6 +57,7 @@ def pedir_sistema_operativo():
         so = input("* CAMPO OBLIGATORIO Ingrese su sistema operativo (Linux/Windows): ") 
     return so
 
+
 def pedir_firewall():
     """Solicita y valida que el estado del firewall sea Activo o Inactivo.
     
@@ -61,6 +68,7 @@ def pedir_firewall():
     while firewall != "Activo" and firewall != "Inactivo":
         firewall = input("* CAMPO OBLIGATORIO Ingrese su estado del firewall (Activo / Inactivo): ")
     return firewall
+
 
 def pedir_tipo_servidor():
     """Solicita y valida que el tipo de servidor sea 1 (Web), 2 (Base de datos) o 3 (Archivos).
@@ -77,6 +85,7 @@ def pedir_tipo_servidor():
         servidor = int(input("* CAMPO OBLIGATORIO Ingrese su tipo de servidor: "))
     return servidor
 
+
 def pedir_nombre_servidor():
     """Solicita y valida el nombre del servidor (mínimo 3 caracteres).
     
@@ -84,6 +93,7 @@ def pedir_nombre_servidor():
         str: Nombre del servidor válido con al menos 3 caracteres.
     """
     return validar_texto("Ingrese el nombre del servidor: ")
+
 
 def pedir_admin():
     """Solicita y valida el nombre del administrador responsable (mínimo 3 caracteres).

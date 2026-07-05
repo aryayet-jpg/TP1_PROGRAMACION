@@ -43,7 +43,7 @@ def validar_texto(mensaje: str) -> str:
         str: Texto válido con al menos 3 caracteres.
     """
     texto = input(mensaje)
-    while len(texto) < 3:
+    while len(texto) < 5:
         print("Error: El campo debe tener al menos 3 caracteres.")
         texto = input(mensaje)
     return texto
