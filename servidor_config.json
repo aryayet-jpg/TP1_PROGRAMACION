@@ -1,0 +1,26 @@
+{
+    "config": {
+        "nombre": "Ariadna",
+        "admin": "AriadnaTronconi",
+        "so": "Linux",
+        "tipo": 3,
+        "firewall": "Inactivo"
+    },
+    "recursos": {
+        "cpu": 98.0,
+        "ram": 100.0,
+        "disco": 500.0,
+        "usuarios": 456,
+        "procesos": 85
+    },
+    "diagnostico": {
+        "promedio": 99.0,
+        "alertas": {
+            "cpu_ram": "\ud83d\udea8 Sobrecarga critica (CPU y RAM muy altas)",
+            "disco": "\ud83d\udea8 Sobrecarga critica (Disco bajo o procesos altos)",
+            "firewall": "\ud83d\udea8 Riesgo de seguridad: firewall desactivado",
+            "web": "",
+            "db": ""
+        }
+    }
+}

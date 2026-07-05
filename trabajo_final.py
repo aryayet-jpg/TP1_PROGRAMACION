@@ -1,11 +1,11 @@
+from datos_de_entrada import mostrar_datos  
+(cpu, ram, admin, discos, procesos, disco, firewall, servidor, usuarios, nombre_del_servidor, so) = mostrar_datos()
+
 print("==== SISTEMA DE DIAGNOSTICO DEL SERVIDOR ===" )
 
 #Daniel: Agregué e Importé la función mostrar_datos del módulo datos_de_entrada
 
-from datos_de_entrada import mostrar_datos  
-
 # Daniel: Recibe las variables definidas en la función
-(cpu, ram, admin, discos, procesos, disco, firewall, servidor, usuarios, nombre_del_servidor, so) = mostrar_datos()
 
 carga_promedio = (cpu + ram) / 2 # (Frann): Acá agregué parentesis!
 recursos_disponibles = print( f"\nEl promedio de uso de recursos (CPU/RAM) es: {carga_promedio}%:  ")
@@ -23,7 +23,7 @@ input(f"Hola {admin}. Presione ENTER para ver su diagnostico: \n")
 contador = 0
 
 if cpu > 80 and ram > 80:
-    cpu_ram_error = "🚨 Sobrecarga critica (CPU y RAM muy altas!) "
+    cpu_ram_error = ("🚨 Sobrecarga critica (CPU y RAM muy altas!" )
     contador += 1
 else:
     print("El estado de su CPU/RAM funcionan perfecto!. ")
@@ -38,7 +38,7 @@ if not firewall == "Activo":
     antivirus = "🚨 Riesgo de seguridad: firewall desactivado. "
     contador += 1 
 
-if (cpu >= 40 and cpu <= 70) and (ram >= 40 and ram <= 70): #(Frann): Corregí una logica acá  
+if (cpu >= 40 and cpu <= 70) and (ram >= 40 and ram <= 70): # (Frann): Corregí una logica acá
         print("El estado de su servidor es normal. ")
 
 match servidor: # Daniel: agregué un match para el input servidor.       
@@ -84,25 +84,25 @@ if bdd_disco_ram_error:
 if contador == 0:
       print("No se detectaron problemas! Su servicio es estable. ")
 
+#Rizzo:Recomendaciones para optimizar
 
-else:
-     
-    print("Recomendaciones:")
+print("Recomendaciones:")
 
-    if cpu_ram_error: #Daniel:posicioné los print para que no estén el la misma linea
-        print("- Reducir carga del sistema o mejorar hardware (CPU/RAM).")
+if cpu_ram_error: #Daniel:posicioné los print para que no estén el la misma linea
+    print("- Reducir carga del sistema o mejorar hardware (CPU/RAM).")
 
-    if disco_procesos_error:
-        print("- Liberar espacio en disco o revisar procesos innecesarios.")
+if disco_procesos_error:
+    print("- Liberar espacio en disco o revisar procesos innecesarios.")
 
-    if antivirus:
-        print("- Activar el firewall para mejorar la seguridad.")
+if antivirus:
+    print("- Activar el firewall para mejorar la seguridad.")
 
-    if web_usuarios_cpu_error:
-        print("- Escalar recursos del servidor web o balancear carga.")
+if web_usuarios_cpu_error:
+    print("- Escalar recursos del servidor web o balancear carga.")
 
-    if bdd_disco_ram_error:
-        print("- Ampliar almacenamiento o optimizar uso de memoria en la base de datos.")
+if bdd_disco_ram_error:
+    print("- Ampliar almacenamiento o optimizar uso de memoria en la base de datos.")
 
-    print(f"==============================================") 
-#Fin
+if contador == 0:
+    print("- No se requieren acciones. El sistema funciona correctamente.")
+print(f"===============================================") 
